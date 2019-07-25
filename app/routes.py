@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, flash, redirect, index
 from app import app
 from app.forms import loginForm
 
@@ -19,7 +19,12 @@ def index():
     ]
     return render_template('index.html', title='home', user=user, posts=posts)
 
-@app.route('/login')
+
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     form = loginForm()
+    if form.validate_on_submit():
+        flash('login requested for user {} and remember_me={}'.format(
+            form.username.data, form.remember_me.data))
+        return redirect(url_for('index'))
     return render_template('login.html', title='Sign In', form=form)
