@@ -61,3 +61,20 @@ def register():
         flash('Congratulations! You are succesfully registered.')
         return redirect(url_for('index'))
     return render_template('register.html', title='Register', form=form)
+
+@app.route('/user/<username>')
+@login_required
+def user(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    # post = Post.query.filter_by(author=user)
+    posts = [
+        {
+            'author': user,
+            'body': 'What a beautiful day'
+        },
+        {
+            'author': user,
+            'body': 'Heeey, heey hey'
+        }
+    ]
+    return render_template('user.html', user=user, posts=posts)
