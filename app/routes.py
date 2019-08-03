@@ -123,9 +123,9 @@ def follow(username):
 @app.route('/unfollow/<username>')
 @login_required
 def unfollow(username):
-    user = User.query.filter_by(username=username)
+    user = User.query.filter_by(username=username).first()
 
-    if not current_user.is_following(username):
+    if not current_user.is_following(user):
         flash('You where not following {}'.format(username))
         return redirect(url_for('index'))
 
