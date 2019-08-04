@@ -24,9 +24,20 @@ def index():
         db.session.commit()
         flash('Your post is now live')
         return redirect(url_for('index'))
-    posts = current_user.followed_posts().all()
-    return render_template('index.html', title='home', form=form, posts=posts)
+    page = request.args.get('page', 1, type=int)
+    posts = current_user.followed_posts().paginate(
+        page, app.config['POSTS_PER_PAGE'], False)
+    return render_template('index.html', title='home', form=form,
+        posts=posts.items)
 
+
+@app.route('/explore')
+@login_required
+def explore():
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.order_by(Post.timestamp.desc()).paginate(
+        page, app.config['POSTS_PER_PAGE'],False)
+    return render_template('index.html', title='Explore', posts=posts.items)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -71,17 +82,9 @@ def register():
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
-    # post = Post.query.filter_by(author=user)
-    posts = [
-        {
-            'author': user,
-            'body': 'What a beautiful day'
-        },
-        {
-            'author': user,
-            'body': 'Heeey, heey hey'
-        }
-    ]
+    posts = Post.query.filter_by(author=user).order_by().order_by(
+        Post.timestamp.desc()).all()
+
     return render_template('user.html', user=user, posts=posts)
 
 
