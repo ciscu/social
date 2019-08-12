@@ -1,19 +1,10 @@
 {% extends 'base.html' %}
-{% block content %}
+{% block app_content %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
       <h1>{{ current_user.username }}</h1>
       {% if form %}
-      <form class="" action="{{ url_for('index')}}" method="post">
-        {{ form.hidden_tag() }}
-        <p>
-          {{ form.post.label }}<br>
-          {{ form.post(cols=32, rows=4) }}<br>
-            {% for error in form.post.errors %}
-              <span style="color:red;">[{{ error }}]</span>
-            {% endfor %}
-        </p>
-        <p>{{ form.submit() }}</p>
-      </form>
+      {{ wtf.quick_form(form)}}
       {% endif %}
 
       {% for post in posts %}
