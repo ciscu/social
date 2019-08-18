@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-08-15 19:19+0200\n"
+"POT-Creation-Date: 2019-08-18 21:07+0200\n"
 "PO-Revision-Date: 2019-08-15 19:23+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: nl\n"
@@ -38,7 +38,7 @@ msgstr "Wachtwoord"
 msgid "Remember Me"
 msgstr "Onthoud mij"
 
-#: app/forms.py:13 app/routes.py:71 app/templates/login.html:5
+#: app/forms.py:13 app/routes.py:80 app/templates/login.html:5
 msgid "Sign In"
 msgstr "Registreren"
 
@@ -70,77 +70,89 @@ msgstr "Indienen"
 msgid "Please use a different username."
 msgstr "Gelieve een andere gebruikersnaam te kiezen"
 
+#: app/forms.py:52
+msgid "Say something"
+msgstr "Vertel iets"
+
 #: app/forms.py:64
 msgid "Request Password Reset"
 msgstr "Vraag een wachtwoord herstel aan"
 
-#: app/routes.py:28
+#: app/routes.py:37
 msgid "Your post is now live"
 msgstr "Uw artikel is nu live"
 
-#: app/routes.py:37
+#: app/routes.py:46
 msgid "home"
 msgstr "Start"
 
-#: app/routes.py:51 app/templates/base.html:21
+#: app/routes.py:60 app/templates/base.html:21
 msgid "Explore"
 msgstr "Verkennen"
 
-#: app/routes.py:64
+#: app/routes.py:73
 msgid "invalid username or password"
 msgstr "Ongeldige gebruikersnaam of wachtwoord"
 
-#: app/routes.py:90
+#: app/routes.py:99
 msgid "Congratulations! You are succesfully registered."
 msgstr "Gefeliciteerd! U bent succesvol gerigistreerd"
 
-#: app/routes.py:92 app/templates/register.html:5
+#: app/routes.py:101 app/templates/register.html:5
 msgid "Register"
 msgstr "Registreer"
 
-#: app/routes.py:118
+#: app/routes.py:127
 msgid "The changes have been saved succesfully"
 msgstr "De aanpassingen zijn succesvol opgeslagen"
 
-#: app/routes.py:123
+#: app/routes.py:132
 msgid "title"
 msgstr "titel"
 
-#: app/routes.py:131 app/routes.py:153
+#: app/routes.py:140 app/routes.py:162
 #, python-format
 msgid "User %(username)s does not exist"
 msgstr "Gebruiker %(username)s bestaad niet"
 
-#: app/routes.py:135
+#: app/routes.py:144
 msgid "Cannot follow yourself"
 msgstr "Niet mogelijk om je eigen te volgen"
 
-#: app/routes.py:140
+#: app/routes.py:149
 #, python-format
 msgid "Your are now following %(username)s"
 msgstr "U volgt nu %(username)s"
 
-#: app/routes.py:149
+#: app/routes.py:158
 #, python-format
 msgid "You where not following %(username)s"
 msgstr "U was gebruiker: %(username)s niet aan het volgen"
 
-#: app/routes.py:157
+#: app/routes.py:166
 msgid "Cannot unfollow yourself"
 msgstr "Niet mogelijk om uzelf te ontvolgen"
 
-#: app/routes.py:162
+#: app/routes.py:171
 #, python-format
 msgid "Your stopt following %(username)s"
 msgstr "U bent gestopt met het volgen van %(username)s"
 
-#: app/routes.py:175
+#: app/routes.py:184
 msgid "Reset email as been sent"
 msgstr "Herstel email is gestuurd"
 
-#: app/routes.py:192
+#: app/routes.py:201
 msgid "Your password has been reset."
 msgstr "Uw wachtwoord is opnieuw ingesteld"
+
+#: app/translate.py:9
+msgid "Error: The translation service is not configured."
+msgstr "Error: De vertalingsdienst is niet geconfigureerd"
+
+#: app/translate.py:17
+msgid "Error: the translation service failed."
+msgstr "Error: the vertalingsdiest werkt niet"
 
 #: app/templates/500.html:4
 msgid "An unexpected error has occurred"
@@ -158,6 +170,10 @@ msgstr "Terug"
 #, python-format
 msgid "%(username)s said %(when)s"
 msgstr "%(username)s zei %(when)s"
+
+#: app/templates/_post.html:24
+msgid "Translate"
+msgstr "Vertalen"
 
 #: app/templates/base.html:4
 msgid "Welcome to Microblog"
@@ -178,6 +194,10 @@ msgstr "Profiel"
 #: app/templates/base.html:28
 msgid "Logout"
 msgstr "Uitloggen"
+
+#: app/templates/base.html:63
+msgid "Error: could not contact server."
+msgstr "Error: kan server niet contacteren"
 
 #: app/templates/edit_profile.html:5
 msgid "Edit Profile"
