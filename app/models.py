@@ -1,6 +1,7 @@
-from app import app, db, login
+from app import db, login
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from flask import current_app
 from datetime import datetime
 from hashlib import md5
 import jwt
@@ -82,6 +83,7 @@ def load_user(id):
 
 
 class Post(db.Model):
+    __searchable__ = ['body']
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String(140), index=True)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)

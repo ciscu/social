@@ -1,6 +1,5 @@
 import os
 import click
-from app import app
 
 def register(app):
     @app.cli.group()
