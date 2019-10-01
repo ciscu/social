@@ -1,67 +1,85 @@
-2019-08-22 22:17:45,759 ERROR: Exception on /favicon.ico [GET] [in /Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1925, in dispatch_request
-    self.raise_routing_exception(req)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1907, in raise_routing_exception
-    raise request.routing_exception
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/ctx.py", line 350, in match_request
-    result = self.url_adapter.match(return_rule=True)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 1799, in match
-    raise NotFound()
-werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
-
-During handling of the above exception, another exception occurred:
-
+2019-09-30 21:13:19,326 ERROR: Exception on /index [GET] [in /Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
   File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in handle_user_exception
-    return self.handle_http_exception(e)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1743, in handle_http_exception
-    return handler(e)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/errors/handlers.py", line 7, in not_found_error
-    return render_template('errors/404.html'), 404
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/templates/errors/404.html", line 1, in top-level template code
-    {% extends 'base.html' %}
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
-    {%- block html %}
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
-    {% block body -%}
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
-    {% block content -%}
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/templates/base.html", line 47, in block "content"
-    {% block app_content %}{% endblock %}
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/templates/errors/404.html", line 5, in block "app_content"
-    <p><a href="{{ url_for('index') }}">{{ _('Back') }}</a></p>
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
     reraise(exc_type, exc_value, tb)
   File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
     raise value
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
-    endpoint, values, method=method, force_external=external
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 2020, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
-2019-08-22 22:19:55,071 INFO: Microblog startup [in /Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/__init__.py:76]
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1947, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2241, in preprocess_request
+    rv = func()
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/main/routes.py", line 19, in before_request
+    g.search_form = SearchForm()
+NameError: name 'SearchForm' is not defined
+2019-09-30 21:13:20,395 ERROR: Exception on /index [GET] [in /Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1947, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2241, in preprocess_request
+    rv = func()
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/main/routes.py", line 19, in before_request
+    g.search_form = SearchForm()
+NameError: name 'SearchForm' is not defined
+2019-09-30 21:13:20,858 ERROR: Exception on /explore [GET] [in /Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1947, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2241, in preprocess_request
+    rv = func()
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/main/routes.py", line 19, in before_request
+    g.search_form = SearchForm()
+NameError: name 'SearchForm' is not defined
+2019-09-30 21:13:21,753 ERROR: Exception on /index [GET] [in /Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1947, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2241, in preprocess_request
+    rv = func()
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/main/routes.py", line 19, in before_request
+    g.search_form = SearchForm()
+NameError: name 'SearchForm' is not defined
+2019-09-30 21:13:22,108 ERROR: Exception on /index [GET] [in /Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1947, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2241, in preprocess_request
+    rv = func()
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/main/routes.py", line 19, in before_request
+    g.search_form = SearchForm()
+NameError: name 'SearchForm' is not defined

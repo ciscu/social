@@ -1,4 +1,46 @@
-2019-08-22 22:15:01,835 ERROR: Exception on /auth/login [GET] [in /Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
+2019-09-04 22:08:43,328 ERROR: Exception on /index [POST] [in /Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/urllib3/connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/urllib3/util/connection.py", line 80, in create_connection
+    raise err
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/urllib3/util/connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/elasticsearch/connection/http_urllib3.py", line 233, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 641, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/urllib3/util/retry.py", line 344, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 603, in urlopen
+    chunked=chunked)
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 355, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/local/Cellar/python/3.7.1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/local/Cellar/python/3.7.1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/local/Cellar/python/3.7.1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/Cellar/python/3.7.1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1016, in _send_output
+    self.send(msg)
+  File "/usr/local/Cellar/python/3.7.1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 956, in send
+    self.connect()
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/urllib3/connection.py", line 183, in connect
+    conn = self._new_conn()
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/urllib3/connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x111d1a978>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,42 +54,29 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/auth/routes.py", line 31, in login
-    return render_template('auth/login.html', title=_('Sign In'), form=form)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/templates/auth/login.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
-    {%- block html %}
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
-    {% block body -%}
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
-    {% block navbar %}
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/templates/base.html", line 16, in block "navbar"
-    <a class="navbar-brand" href="{{ url_for('index') }}">Microblog</a>
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
-    endpoint, values, method=method, force_external=external
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 2020, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/main/routes.py", line 34, in index
+    db.session.commit()
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1027, in commit
+    self.transaction.commit()
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 501, in commit
+    self.session.dispatch.after_commit(self.session)
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/sqlalchemy/event/attr.py", line 259, in __call__
+    fn(*args, **kw)
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/models.py", line 36, in after_commit
+    add_to_index(obj.__tablename__, obj)
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/search.py", line 10, in add_to_index
+    body=payload)
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/elasticsearch/client/utils.py", line 84, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/elasticsearch/client/__init__.py", line 364, in index
+    "POST", _make_path(index, doc_type, id), params=params, body=body
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/elasticsearch/transport.py", line 350, in perform_request
+    timeout=timeout,
+  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/elasticsearch/connection/http_urllib3.py", line 245, in perform_request
+    raise ConnectionError("N/A", str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x111d1a978>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x111d1a978>: Failed to establish a new connection: [Errno 61] Connection refused)
+2019-09-04 22:11:07,844 INFO: Microblog startup [in /Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/__init__.py:76]
