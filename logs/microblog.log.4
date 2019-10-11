@@ -1,72 +1,84 @@
-2019-09-30 21:13:22,609 ERROR: Exception on /index [GET] [in /Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
+2019-10-10 14:37:15,152 ERROR: Exception on / [POST] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
     raise value
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1947, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2241, in preprocess_request
-    rv = func()
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/main/routes.py", line 19, in before_request
-    g.search_form = SearchForm()
-NameError: name 'SearchForm' is not defined
-2019-09-30 21:13:42,770 INFO: Microblog startup [in /Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/__init__.py:76]
-2019-09-30 21:13:49,785 INFO: Microblog startup [in /Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/__init__.py:76]
-2019-09-30 21:14:02,463 INFO: Microblog startup [in /Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/__init__.py:76]
-2019-09-30 21:14:13,219 INFO: Microblog startup [in /Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/__init__.py:76]
-2019-09-30 21:14:19,587 ERROR: Exception on /index [GET] [in /Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/main/routes.py", line 35, in index
+    db.session.commit()
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 906, in commit
+    self.transaction.commit()
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 468, in commit
+    self.session.dispatch.after_commit(self.session)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/event/attr.py", line 218, in __call__
+    fn(*args, **kw)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/models.py", line 36, in after_commit
+    add_to_index(obj.__tablename__, obj)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/search.py", line 24, in add_to_index
+    body=payload)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/client/__init__.py", line 300, in index
+    _make_path(index, doc_type, id), params=params, body=body)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/transport.py", line 314, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/connection/http_urllib3.py", line 163, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.RequestError: TransportError(400, 'illegal_argument_exception', 'Rejecting mapping update to [post] as the final mapping would have more than 1 type: [_doc, post]')
+2019-10-10 14:40:57,014 INFO: Microblog startup [in /Users/ciscuypers/programming/webdev/flask/Projects/social/app/__init__.py:76]
+2019-10-10 14:41:07,670 ERROR: Exception on / [POST] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
     raise value
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1947, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2241, in preprocess_request
-    rv = func()
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/main/routes.py", line 19, in before_request
-    g.search_form = SearchForm()
-NameError: name 'SearchForm' is not defined
-2019-09-30 21:14:22,715 ERROR: Exception on /index [GET] [in /Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1947, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2241, in preprocess_request
-    rv = func()
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/main/routes.py", line 19, in before_request
-    g.search_form = SearchForm()
-NameError: name 'SearchForm' is not defined
-2019-09-30 21:14:52,712 ERROR: Exception on /index [GET] [in /Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1947, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2241, in preprocess_request
-    rv = func()
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/main/routes.py", line 19, in before_request
-    g.search_form = SearchForm()
-NameError: name 'SearchForm' is not defined
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/main/routes.py", line 35, in index
+    db.session.commit()
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 906, in commit
+    self.transaction.commit()
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 468, in commit
+    self.session.dispatch.after_commit(self.session)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/event/attr.py", line 218, in __call__
+    fn(*args, **kw)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/models.py", line 36, in after_commit
+    add_to_index(obj.__tablename__, obj)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/search.py", line 24, in add_to_index
+    body=payload)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/client/__init__.py", line 300, in index
+    _make_path(index, doc_type, id), params=params, body=body)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/transport.py", line 314, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/connection/http_urllib3.py", line 163, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.RequestError: TransportError(400, 'illegal_argument_exception', 'Rejecting mapping update to [post] as the final mapping would have more than 1 type: [_doc, post]')
+2019-10-10 14:43:33,498 INFO: Microblog startup [in /Users/ciscuypers/programming/webdev/flask/Projects/social/app/__init__.py:76]

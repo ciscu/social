@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv"
+VIRTUAL_ENV="/Users/ciscuypers/programming/webdev/flask/Projects/social/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

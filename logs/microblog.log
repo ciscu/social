@@ -1,66 +1,59 @@
-2019-09-30 23:29:31,711 ERROR: Exception on /search [GET] [in /Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
+2019-10-11 17:19:00,406 ERROR: Exception on /index [POST] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
     raise value
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
     rv = self.dispatch_request()
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask_login/utils.py", line 228, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/main/routes.py", line 143, in search
-    current_app.config['POSTS_PER_PAGE'])
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/models.py", line 15, in search
-    ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/search.py", line 26, in query_index
-    'from': (page - 1) * per_page, 'size': per_page})
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/elasticsearch/client/utils.py", line 84, in _wrapped
-    return func(*args, params=params, **kwargs)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/elasticsearch/client/__init__.py", line 819, in search
-    "GET", _make_path(index, "_search"), params=params, body=body
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/elasticsearch/transport.py", line 350, in perform_request
-    timeout=timeout,
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/elasticsearch/connection/http_urllib3.py", line 252, in perform_request
-    self._raise_error(response.status, raw_data)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/elasticsearch/connection/base.py", line 181, in _raise_error
-    status_code, error_message, additional_info
-elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index', post, index_or_alias)
-2019-09-30 23:29:38,076 ERROR: Exception on /search [GET] [in /Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/main/routes.py", line 35, in index
+    db.session.commit()
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 906, in commit
+    self.transaction.commit()
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 468, in commit
+    self.session.dispatch.after_commit(self.session)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/event/attr.py", line 218, in __call__
+    fn(*args, **kw)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/models.py", line 36, in after_commit
+    add_to_index(cls.__tablename__, obj)
+AttributeError: type object 'SearchableMixin' has no attribute '__tablename__'
+2019-10-11 17:19:40,971 ERROR: Exception on /index [POST] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
     raise value
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
     rv = self.dispatch_request()
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask_login/utils.py", line 228, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/main/routes.py", line 143, in search
-    current_app.config['POSTS_PER_PAGE'])
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/models.py", line 15, in search
-    ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/complete_flask/microblog/app/search.py", line 26, in query_index
-    'from': (page - 1) * per_page, 'size': per_page})
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/elasticsearch/client/utils.py", line 84, in _wrapped
-    return func(*args, params=params, **kwargs)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/elasticsearch/client/__init__.py", line 819, in search
-    "GET", _make_path(index, "_search"), params=params, body=body
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/elasticsearch/transport.py", line 350, in perform_request
-    timeout=timeout,
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/elasticsearch/connection/http_urllib3.py", line 252, in perform_request
-    self._raise_error(response.status, raw_data)
-  File "/Users/ciscuypers 1/Documents/Learning/Programming/udacity/fullstack-nanodegree-vm/vagrant/personal_site/ciscuypers_be/flask/venv/lib/python3.7/site-packages/elasticsearch/connection/base.py", line 181, in _raise_error
-    status_code, error_message, additional_info
-elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index', post, index_or_alias)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/main/routes.py", line 35, in index
+    db.session.commit()
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 906, in commit
+    self.transaction.commit()
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 468, in commit
+    self.session.dispatch.after_commit(self.session)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/event/attr.py", line 218, in __call__
+    fn(*args, **kw)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/models.py", line 36, in after_commit
+    add_to_index(cls.__tablename__, obj)
+AttributeError: type object 'SearchableMixin' has no attribute '__tablename__'
+2019-10-11 17:25:31,176 INFO: Microblog startup [in /Users/ciscuypers/programming/webdev/flask/Projects/social/app/__init__.py:76]
