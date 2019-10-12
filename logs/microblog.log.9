@@ -1,11 +1,4 @@
-2019-10-09 21:43:41,385 ERROR: Exception on /search [GET] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 666, in comparator
-    comparator_factory = self.type.comparator_factory
-AttributeError: 'NoneType' object has no attribute 'comparator_factory'
-
-During handling of the above exception, another exception occurred:
-
+2019-10-10 14:37:15,152 ERROR: Exception on / [POST] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -21,36 +14,33 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask_login/utils.py", line 228, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/main/routes.py", line 143, in search
-    current_app.config['POSTS_PER_PAGE'])
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/models.py", line 22, in search
-    db.case(when, value=cls.id)), total
-  File "<string>", line 2, in order_by
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/base.py", line 201, in generate
-    fn(self, *args[1:], **kw)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 1589, in order_by
-    criterion = self._adapt_col_list(criterion)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 256, in _adapt_col_list
-    for o in cols
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 256, in <listcomp>
-    for o in cols
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 4188, in _literal_as_label_reference
-    elif hasattr(element, '__clause_element__'):
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 676, in __getattr__
-    return getattr(self.comparator, key)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 764, in __get__
-    obj.__dict__[self.__name__] = result = self.fget(obj)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 670, in comparator
-    "is not a TypeEngine class or object" % self.type)
-TypeError: Object None associated with '.type' attribute is not a TypeEngine class or object
-2019-10-09 21:43:54,673 ERROR: Exception on /search [GET] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 666, in comparator
-    comparator_factory = self.type.comparator_factory
-AttributeError: 'NoneType' object has no attribute 'comparator_factory'
-
-During handling of the above exception, another exception occurred:
-
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/main/routes.py", line 35, in index
+    db.session.commit()
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 906, in commit
+    self.transaction.commit()
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 468, in commit
+    self.session.dispatch.after_commit(self.session)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/event/attr.py", line 218, in __call__
+    fn(*args, **kw)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/models.py", line 36, in after_commit
+    add_to_index(obj.__tablename__, obj)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/search.py", line 24, in add_to_index
+    body=payload)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/client/__init__.py", line 300, in index
+    _make_path(index, doc_type, id), params=params, body=body)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/transport.py", line 314, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/connection/http_urllib3.py", line 163, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.RequestError: TransportError(400, 'illegal_argument_exception', 'Rejecting mapping update to [post] as the final mapping would have more than 1 type: [_doc, post]')
+2019-10-10 14:40:57,014 INFO: Microblog startup [in /Users/ciscuypers/programming/webdev/flask/Projects/social/app/__init__.py:76]
+2019-10-10 14:41:07,670 ERROR: Exception on / [POST] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -66,25 +56,29 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask_login/utils.py", line 228, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/main/routes.py", line 143, in search
-    current_app.config['POSTS_PER_PAGE'])
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/models.py", line 22, in search
-    db.case(when, value=cls.id)), total
-  File "<string>", line 2, in order_by
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/base.py", line 201, in generate
-    fn(self, *args[1:], **kw)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 1589, in order_by
-    criterion = self._adapt_col_list(criterion)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 256, in _adapt_col_list
-    for o in cols
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 256, in <listcomp>
-    for o in cols
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 4188, in _literal_as_label_reference
-    elif hasattr(element, '__clause_element__'):
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 676, in __getattr__
-    return getattr(self.comparator, key)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 764, in __get__
-    obj.__dict__[self.__name__] = result = self.fget(obj)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 670, in comparator
-    "is not a TypeEngine class or object" % self.type)
-TypeError: Object None associated with '.type' attribute is not a TypeEngine class or object
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/main/routes.py", line 35, in index
+    db.session.commit()
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 906, in commit
+    self.transaction.commit()
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 468, in commit
+    self.session.dispatch.after_commit(self.session)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/event/attr.py", line 218, in __call__
+    fn(*args, **kw)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/models.py", line 36, in after_commit
+    add_to_index(obj.__tablename__, obj)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/search.py", line 24, in add_to_index
+    body=payload)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/client/__init__.py", line 300, in index
+    _make_path(index, doc_type, id), params=params, body=body)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/transport.py", line 314, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/connection/http_urllib3.py", line 163, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.RequestError: TransportError(400, 'illegal_argument_exception', 'Rejecting mapping update to [post] as the final mapping would have more than 1 type: [_doc, post]')
+2019-10-10 14:43:33,498 INFO: Microblog startup [in /Users/ciscuypers/programming/webdev/flask/Projects/social/app/__init__.py:76]

@@ -1,4 +1,49 @@
-2019-10-10 14:18:06,133 ERROR: Exception on /index [POST] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
+2019-10-11 17:15:43,842 ERROR: Exception on /search [GET] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1957, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2019-10-11 17:15:52,263 ERROR: Exception on /search [GET] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1957, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2019-10-11 17:16:06,678 ERROR: Exception on /search [GET] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1957, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2019-10-11 17:16:58,552 ERROR: Exception on /search [GET] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1957, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2019-10-11 17:17:04,759 INFO: Microblog startup [in /Users/ciscuypers/programming/webdev/flask/Projects/social/app/__init__.py:76]
+2019-10-11 17:17:11,673 ERROR: Exception on /search [GET] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,25 +59,10 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask_login/utils.py", line 228, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/main/routes.py", line 35, in index
-    db.session.commit()
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 157, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 906, in commit
-    self.transaction.commit()
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 468, in commit
-    self.session.dispatch.after_commit(self.session)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/event/attr.py", line 218, in __call__
-    fn(*args, **kw)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/models.py", line 36, in after_commit
-    add_to_index(obj.__tablename__, obj)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/search.py", line 24, in add_to_index
-    body=payload)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
-    return func(*args, params=params, **kwargs)
-TypeError: index() missing 1 required positional argument: 'doc_type'
-2019-10-10 14:18:16,293 INFO: Microblog startup [in /Users/ciscuypers/programming/webdev/flask/Projects/social/app/__init__.py:76]
-2019-10-10 14:18:18,907 ERROR: Exception on /index [POST] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/main/routes.py", line 150, in search
+    next_url=next_url, prev_url=prev_url)
+UnboundLocalError: local variable 'next_url' referenced before assignment
+2019-10-11 17:17:20,148 ERROR: Exception on /search [GET] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -48,54 +78,7 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask_login/utils.py", line 228, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/main/routes.py", line 35, in index
-    db.session.commit()
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 157, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 906, in commit
-    self.transaction.commit()
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 468, in commit
-    self.session.dispatch.after_commit(self.session)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/event/attr.py", line 218, in __call__
-    fn(*args, **kw)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/models.py", line 36, in after_commit
-    add_to_index(obj.__tablename__, obj)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/search.py", line 24, in add_to_index
-    body=payload)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
-    return func(*args, params=params, **kwargs)
-TypeError: index() missing 1 required positional argument: 'doc_type'
-2019-10-10 14:18:21,961 ERROR: Exception on /index [POST] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask_login/utils.py", line 228, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/main/routes.py", line 35, in index
-    db.session.commit()
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 157, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 906, in commit
-    self.transaction.commit()
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 468, in commit
-    self.session.dispatch.after_commit(self.session)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/event/attr.py", line 218, in __call__
-    fn(*args, **kw)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/models.py", line 36, in after_commit
-    add_to_index(obj.__tablename__, obj)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/search.py", line 24, in add_to_index
-    body=payload)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
-    return func(*args, params=params, **kwargs)
-TypeError: index() missing 1 required positional argument: 'doc_type'
-2019-10-10 14:19:07,035 INFO: Microblog startup [in /Users/ciscuypers/programming/webdev/flask/Projects/social/app/__init__.py:76]
+  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/main/routes.py", line 150, in search
+    next_url=next_url, prev_url=prev_url)
+UnboundLocalError: local variable 'next_url' referenced before assignment
+2019-10-11 17:18:35,879 INFO: Microblog startup [in /Users/ciscuypers/programming/webdev/flask/Projects/social/app/__init__.py:76]

@@ -1,4 +1,4 @@
-2019-10-10 14:19:23,124 ERROR: Exception on / [POST] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
+2019-10-11 17:19:00,406 ERROR: Exception on /index [POST] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -25,13 +25,9 @@ Traceback (most recent call last):
   File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/event/attr.py", line 218, in __call__
     fn(*args, **kw)
   File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/models.py", line 36, in after_commit
-    add_to_index(obj.__tablename__, obj)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/search.py", line 24, in add_to_index
-    body=payload)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
-    return func(*args, params=params, **kwargs)
-TypeError: index() missing 1 required positional argument: 'doc_type'
-2019-10-10 14:33:46,494 ERROR: Exception on / [POST] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
+    add_to_index(cls.__tablename__, obj)
+AttributeError: type object 'SearchableMixin' has no attribute '__tablename__'
+2019-10-11 17:19:40,971 ERROR: Exception on /index [POST] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -58,51 +54,29 @@ Traceback (most recent call last):
   File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/event/attr.py", line 218, in __call__
     fn(*args, **kw)
   File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/models.py", line 36, in after_commit
-    add_to_index(obj.__tablename__, obj)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/search.py", line 24, in add_to_index
-    body=payload)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
-    return func(*args, params=params, **kwargs)
-TypeError: index() missing 1 required positional argument: 'doc_type'
-2019-10-10 14:37:06,434 INFO: Microblog startup [in /Users/ciscuypers/programming/webdev/flask/Projects/social/app/__init__.py:76]
-2019-10-10 14:37:11,348 ERROR: Exception on / [POST] [in /Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/flask_login/utils.py", line 228, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/main/routes.py", line 35, in index
-    db.session.commit()
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 157, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 906, in commit
-    self.transaction.commit()
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 468, in commit
-    self.session.dispatch.after_commit(self.session)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/sqlalchemy/event/attr.py", line 218, in __call__
-    fn(*args, **kw)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/models.py", line 36, in after_commit
-    add_to_index(obj.__tablename__, obj)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/app/search.py", line 24, in add_to_index
-    body=payload)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
-    return func(*args, params=params, **kwargs)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/client/__init__.py", line 300, in index
-    _make_path(index, doc_type, id), params=params, body=body)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/transport.py", line 314, in perform_request
-    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/connection/http_urllib3.py", line 163, in perform_request
-    self._raise_error(response.status, raw_data)
-  File "/Users/ciscuypers/programming/webdev/flask/Projects/social/venv/lib/python3.7/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
-    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
-elasticsearch.exceptions.RequestError: TransportError(400, 'illegal_argument_exception', 'Rejecting mapping update to [post] as the final mapping would have more than 1 type: [_doc, post]')
+    add_to_index(cls.__tablename__, obj)
+AttributeError: type object 'SearchableMixin' has no attribute '__tablename__'
+2019-10-11 17:25:31,176 INFO: Microblog startup [in /Users/ciscuypers/programming/webdev/flask/Projects/social/app/__init__.py:76]
+2019-10-11 20:05:01,217 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 20:13:22,903 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 20:17:05,619 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 20:19:17,868 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 20:19:18,106 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 20:19:18,112 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 20:19:18,144 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 20:25:04,573 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 20:25:04,794 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 20:25:04,884 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 20:25:04,924 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 20:25:28,076 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 20:25:28,309 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 20:25:28,314 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 20:25:28,387 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 20:42:38,907 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 20:42:38,952 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 20:42:38,990 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 20:42:39,028 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 22:27:23,283 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 22:27:23,316 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 22:27:23,414 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
+2019-10-11 22:27:23,419 INFO: Microblog startup [in /home/vagrant/social/app/__init__.py:76]
