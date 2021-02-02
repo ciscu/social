@@ -2,8 +2,9 @@
 __pycache__
 logs/microblog.log*
 .venv
-.*.db
+*.db
 config.py
 .migrations_bu
 migrations
 .env
+migrations
